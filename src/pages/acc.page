@@ -1,0 +1,27 @@
+<apex:page standardController="Account">
+<apex:form >
+<apex:repeat var="AcccountFieldsets">
+</apex:repeat>
+<apex:pageBlock title="AccountDetails">
+<apex:pageBlockSection title="Account Name">
+<apex:inputText value="{!Account.Name}" label="Name"/>
+<apex:inputText value="{!Account.phone}" label="Phone"/>
+<apex:inputText value="{!Account.Industry}" label="Industry"/>
+<apex:inputText value="{!Account.AccountNumber}" label="AccountNumber"/>
+
+</apex:pageBlockSection>
+<apex:pageBlockButtons >
+<apex:commandButton action="{!save}" value="save"/>
+<apex:commandButton action="{!Cancel}" value="Cancel"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+<apex:pageBlock title="Contacts">
+<apex:pageBlockTable value="{!Account.contacts}" var="int">
+<apex:column value="{!int.Name}"/>
+<apex:column value="{!int.Phone}"/>
+<apex:column value="{!int.Title}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>
+<apex:detail subject="{!$CurrentPage.parameters.id}" relatedList="True"/>
+</apex:form>
+</apex:page>
