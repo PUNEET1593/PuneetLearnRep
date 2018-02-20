@@ -1,0 +1,5 @@
+<apex:page >
+<apex:stylesheet value="$Resource.style"/>
+<h1>Hello</h1><br/>
+<h2> ab details</h2>
+</apex:page>
